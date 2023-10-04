@@ -18,20 +18,8 @@ public class MemberComparator implements Comparator<Member> {
                 && second.getMemberType() == MemberType.JUNIOR_STUDENT
         ) {
             return -1;
-        } else if (first.getMemberType() == MemberType.TEACHER
-                && second.getMemberType() == MemberType.LIBRARIAN
-        ) {
-            return -1;
         } else if (first.getMemberType() == MemberType.SENIOR_STUDENT
                 && second.getMemberType() == MemberType.JUNIOR_STUDENT
-        ) {
-            return -1;
-        } else if (first.getMemberType() == MemberType.SENIOR_STUDENT
-                && second.getMemberType() == MemberType.LIBRARIAN
-        ) {
-            return -1;
-        } else if (first.getMemberType() == MemberType.JUNIOR_STUDENT
-                && second.getMemberType() == MemberType.LIBRARIAN
         ) {
             return -1;
         } else if (first.getMemberType() == second.getMemberType()) {

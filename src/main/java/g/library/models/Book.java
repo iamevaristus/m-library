@@ -3,6 +3,7 @@ package g.library.models;
 import g.library.enums.BookStatus;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class Book {
     private int id;
@@ -131,6 +132,22 @@ public class Book {
 
     public boolean isAvailable() {
         return getStatus() == BookStatus.AVAILABLE;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof Book book) {
+            return id == book.id
+                    && Objects.equals(title, book.title)
+                    && Objects.equals(author, book.author);
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, author);
     }
 
     @Override

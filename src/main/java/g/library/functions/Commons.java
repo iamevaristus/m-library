@@ -1,9 +1,15 @@
 package g.library.functions;
 
+import g.library.enums.Gender;
+import g.library.enums.MemberType;
 import g.library.models.Book;
+import g.library.models.Member;
+import g.library.models.Student;
+import g.library.models.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Commons {
     public static void printDebug(String message) {
@@ -117,6 +123,102 @@ public class Commons {
                     "Available"
             );
         }};
+    }
+
+    public static List<Member> getMembers() {
+        List<Member> list = new ArrayList<>();
+
+        Student juniorStudent1 = new Student(
+                "Chioma",
+                "Frank",
+                UUID.randomUUID(),
+                Gender.FEMALE,
+                "Jss1",
+                MemberType.JUNIOR_STUDENT
+        );
+        Student juniorStudent2 = new Student(
+                "Emmanuel",
+                "Frank",
+                UUID.randomUUID(),
+                Gender.MALE,
+                "Jss1",
+                MemberType.JUNIOR_STUDENT
+        );
+        Student seniorStudent = new Student(
+                "Evaristus",
+                "Frank",
+                UUID.randomUUID(),
+                Gender.FEMALE,
+                "Ss1",
+                MemberType.SENIOR_STUDENT
+        );
+        Student seniorStudent1 = new Student(
+                "Francis",
+                "Frank",
+                UUID.randomUUID(),
+                Gender.MALE,
+                "Ss1",
+                MemberType.SENIOR_STUDENT
+        );
+        Teacher teacher = new Teacher(
+                "Evaristus",
+                "Frank",
+                UUID.randomUUID(),
+                Gender.MALE,
+                "English"
+        );
+        Teacher teacher1 = new Teacher(
+                "Joseph",
+                "Frank",
+                UUID.randomUUID(),
+                Gender.FEMALE,
+                "Mathematics"
+        );
+
+        list.add(juniorStudent1);
+        list.add(juniorStudent2);
+        list.add(seniorStudent1);
+        list.add(seniorStudent);
+        list.add(teacher1);
+        list.add(teacher);
+
+        return list;
+    }
+
+    public static List<Member> getMembersFromInput(Member member) {
+        Student seniorStudent1 = new Student();
+        Student juniorStudent1 = new Student();
+        Teacher teacher = new Teacher();
+
+        juniorStudent1.setClassLevel("Jss1");
+        juniorStudent1.setId(member.getId());
+        juniorStudent1.setGender(member.getGender());
+        juniorStudent1.setFirstName(member.getFirstName());
+        juniorStudent1.setLastName(member.getLastName());
+        juniorStudent1.setMemberType(MemberType.JUNIOR_STUDENT);
+        juniorStudent1.setBookCart(member.getBookCart());
+
+        seniorStudent1.setClassLevel("Ss1");
+        seniorStudent1.setId(member.getId());
+        seniorStudent1.setGender(member.getGender());
+        seniorStudent1.setFirstName(member.getFirstName());
+        seniorStudent1.setLastName(member.getLastName());
+        seniorStudent1.setMemberType(MemberType.SENIOR_STUDENT);
+        seniorStudent1.setBookCart(member.getBookCart());
+
+        teacher.setSubject("English");
+        teacher.setId(member.getId());
+        teacher.setGender(member.getGender());
+        teacher.setFirstName(member.getFirstName());
+        teacher.setLastName(member.getLastName());
+        teacher.setMemberType(MemberType.TEACHER);
+        teacher.setBookCart(member.getBookCart());
+
+        List<Member> members = new ArrayList<>();
+        members.add(juniorStudent1);
+        members.add(seniorStudent1);
+        members.add(teacher);
+        return members;
     }
 
     public static List<Book> books() {

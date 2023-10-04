@@ -10,13 +10,9 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public interface LibrarianInterface {
-    Member checkoutBook(PriorityQueue<Member> priorityQueue, Book book) throws BookException;
+    Member checkoutBook(Queue<Member> memberQueue, Book book) throws BookException;
 
-    Member checkoutBook(Queue<Member> queue, Book book) throws BookException;
+    Book searchBookByTitleAndAuthor(Book book, List<Book> books) throws BookException;
 
-    Book searchBookByTitleAndAuthor(Book book) throws BookException;
-
-    Map<Member, Book> addCollectedBookToRegister(Member member, Book book);
-
-    boolean updateLibraryData(Member member, Book book, boolean isReturning);
+    boolean updateLibraryData(Member member, Book book, boolean isReturning, List<Book> books);
 }

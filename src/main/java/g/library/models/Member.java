@@ -5,7 +5,6 @@ import g.library.enums.MemberType;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 abstract public class Member {
@@ -19,7 +18,7 @@ abstract public class Member {
 
     private MemberType memberType;
 
-    private List<Book> collectedBooks = new ArrayList<>();
+    private Book bookCart;
 
     /// SETTERS
     public void setFirstName(String firstName) {
@@ -42,8 +41,8 @@ abstract public class Member {
         this.id = id;
     }
 
-    public void setCollectedBooks(List<Book> collectedBooks) {
-        this.collectedBooks = collectedBooks;
+    public void setBookCart(Book bookCart) {
+        this.bookCart = bookCart;
     }
 
     /// GETTERS
@@ -68,8 +67,8 @@ abstract public class Member {
         return memberType;
     }
 
-    public List<Book> getCollectedBooks() {
-        return collectedBooks;
+    public Book getBookCart() {
+        return bookCart;
     }
 
     public Member(
@@ -104,7 +103,7 @@ abstract public class Member {
                 id,
                 gender,
                 memberType,
-                collectedBooks.toString()
+                bookCart.toString()
         );
     }
 }

@@ -1,5 +1,7 @@
 package g.library.models;
 
+import g.library.functions.MemberComparator;
+
 import java.util.*;
 
 public class Library {
@@ -8,6 +10,10 @@ public class Library {
     private Map<Member, Book> collectedBooksRegister = new Hashtable<>();
 
     private List<Book> bookList = new ArrayList<>();
+
+    private Queue<Member> memberQueue = new LinkedList<>();
+
+    private PriorityQueue<Member> memberPriorityQueue = new PriorityQueue<>(new MemberComparator());
 
     public Librarian getLibrarian() {
         return librarian;
@@ -31,6 +37,22 @@ public class Library {
 
     public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
+    }
+
+    public Queue<Member> getMemberQueue() {
+        return memberQueue;
+    }
+
+    public void setMemberQueue(Queue<Member> memberQueue) {
+        this.memberQueue = memberQueue;
+    }
+
+    public PriorityQueue<Member> getMemberPriorityQueue() {
+        return memberPriorityQueue;
+    }
+
+    public void setMemberPriorityQueue(PriorityQueue<Member> memberPriorityQueue) {
+        this.memberPriorityQueue = memberPriorityQueue;
     }
 
     public Library(
