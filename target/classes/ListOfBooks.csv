@@ -1,0 +1,9 @@
+Id, Title, Author, PublishDate, Quantity, Genre, ISBN, Status
+1, The Hitchhiker's Guide to the Galaxy, Douglas Adams, 1979, 100, Science Fiction, 0-330-25864-8, Available
+2, Pride and Prejudice, Jane Austen, 1813, 100, Romance, 0-14-062328-4, Available
+3, To Kill a Mockingbird, Harper Lee, 1960, 100, Fiction, 0-446-69427-6, Available
+4, The Lord of the Rings, J.R.R. Tolkien, 1954, 100, Fantasy, 0-395-08254-4, Available
+5, The Harry Potter series, J.K. Rowling, 2007, 100, Fantasy, 0-7475-3269-9, Available
+6, The Hunger Games trilogy, Suzanne Collins, 2010, 100, Science Fiction, 0-545-01014-2, Available
+7, The Twilight Saga, Stephenie Meyer, 2011, 100, Fantasy, 0-316-16000-3, Available
+8, Things Fall Apart, Chinua Achebe, 2011, 0, Fantasy, 0-316-16000-3, Not Available
